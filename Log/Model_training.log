@@ -1,0 +1,23 @@
+2025-11-04 23:08:47,885 | DEBUG | Model_training| The train dataset has been converted to Data frame if it was or it wasnt
+2025-11-04 23:08:48,177 | DEBUG | Model_training| The model : {name} has been trained and saved! as /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/LogisticRegression.pkl --> 
+2025-11-04 23:10:29,997 | DEBUG | Model_training| The model : {name} has been trained and saved! as /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/SVC.pkl --> 
+2025-11-04 23:12:42,993 | DEBUG | Model_training| The model : {name} has been trained and saved! as /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/RandomForestClassifier.pkl --> 
+2025-11-04 23:12:43,049 | DEBUG | Model_training| The model : {name} has been trained and saved! as /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/KNeighborsClassifier.pkl --> 
+2025-11-04 23:12:47,076 | DEBUG | Model_training| The model : {name} has been trained and saved! as /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl --> 
+2025-11-04 23:12:47,077 | DEBUG | Model_training| All models are trained and saved as .pkl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
