@@ -1,0 +1,12 @@
+cmd: python3 src/data_ingetion.py
+deps:
+- path: src/data_ingetion.py
+  hash: md5
+  md5: c53ac4cb8d338383b09b18bbf597a33e
+  size: 2971
+outs:
+- path: Data/raw
+  hash: md5
+  md5: 445519db3f59651e71790fd0916b381b.dir
+  size: 3706211
+  nfiles: 2

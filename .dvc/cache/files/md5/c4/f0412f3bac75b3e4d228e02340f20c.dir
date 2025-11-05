@@ -1,0 +1,1 @@
+[{"md5": "4e2f219c7968a825623b6690bc29d7be", "relpath": "KNeighborsClassifier.pkl"}, {"md5": "ef977a4876d25c9662a68b9dfb71d45a", "relpath": "LogisticRegression.pkl"}, {"md5": "1416bc2b6b47a862e0242b4f52726876", "relpath": "RandomForestClassifier.pkl"}, {"md5": "8d962d088c603f1a64feb2beb1f254ec", "relpath": "XGBClassifier.pkl"}]

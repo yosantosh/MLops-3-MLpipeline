@@ -1,0 +1,16 @@
+cmd: python3 src/model_evaluation.py
+deps:
+- path: Data/models
+  hash: md5
+  md5: 4774987eb94ee6b854185ef7e69028a6.dir
+  size: 53443473
+  nfiles: 4
+- path: src/model_evaluation.py
+  hash: md5
+  md5: 32eceb4344b15a47011955f1b47b5ade
+  size: 2294
+outs:
+- path: Data/model_performance_metrices.csv
+  hash: md5
+  md5: 49c2270e354f866ae364a97e75742bbe
+  size: 405

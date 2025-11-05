@@ -1,0 +1,17 @@
+cmd: python3 src/model_training.py
+deps:
+- path: Data/preprocessed
+  hash: md5
+  md5: ef01a04cbbebb333640eb2ed5316887f.dir
+  size: 35778139
+  nfiles: 2
+- path: src/model_training.py
+  hash: md5
+  md5: f0731858885a5e1643b2c4896296aaeb
+  size: 5002
+outs:
+- path: Data/models
+  hash: md5
+  md5: 4774987eb94ee6b854185ef7e69028a6.dir
+  size: 53443473
+  nfiles: 4
