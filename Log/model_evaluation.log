@@ -5,3 +5,9 @@
 2025-11-05 18:29:22,079   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : RandomForestClassifier.pkl
 2025-11-05 18:29:24,091   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : KNeighborsClassifier.pkl
 2025-11-05 18:29:24,095   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-05 18:50:28,094   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-05 18:50:28,228   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-05 18:50:28,381   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-05 18:50:29,146   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-05 18:50:32,070   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-05 18:50:32,076   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
