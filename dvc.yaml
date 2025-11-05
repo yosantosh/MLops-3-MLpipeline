@@ -1,6 +1,6 @@
-stages:                      # stages , to add pipeline stages
-  data_ingetion:    # componenets
-    cmd: python3 src/data_ingetion.py       #terminal command
+stages:                      # DVC pipeline stages
+  data_ingestion:    # components
+    cmd: python3 src/data_ingetion.py       # terminal command
     deps:                  # dependencies
       - src/data_ingetion.py
 
@@ -33,4 +33,4 @@ stages:                      # stages , to add pipeline stages
       - src/model_evaluation.py
 
     outs:
-      - Data/model_performance_metrices.csv
+      - Data/model_performance_metrics.csv

@@ -1,7 +1,7 @@
-data_ingetion:
+data_ingestion:
   test_size: 0.2
 
-model_training:                                  # this is how to configure model with their parms
+model_training:                                  # configure models and their parameters here
   models:
     LogisticRegression:
       enabled: true
