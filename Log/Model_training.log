@@ -189,3 +189,55 @@ weighted avg       0.99      0.99      0.99     36168
 
 2025-11-05 19:04:55,665 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl
 2025-11-05 19:04:55,666 | INFO | Model_training | Training completed for 4 models
+2025-11-05 23:48:11,675 | INFO | Model_training | Loaded preprocessed train data with shape (36168, 41)
+2025-11-05 23:48:11,685 | DEBUG | Model_training | Split features X shape: (36168, 40), target y shape: (36168,)
+2025-11-05 23:48:11,688 | INFO | Model_training | Detected problem type: classification
+2025-11-05 23:48:11,688 | INFO | Model_training | Training model: LogisticRegression
+2025-11-05 23:48:12,155 | INFO | Model_training | Classification report for LogisticRegression:
+              precision    recall  f1-score   support
+
+           0       0.92      0.97      0.95     31910
+           1       0.65      0.35      0.46      4258
+
+    accuracy                           0.90     36168
+   macro avg       0.78      0.66      0.70     36168
+weighted avg       0.89      0.90      0.89     36168
+
+2025-11-05 23:48:12,158 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/LogisticRegression.pkl
+2025-11-05 23:48:12,158 | INFO | Model_training | Training model: RandomForestClassifier
+2025-11-05 23:51:09,779 | INFO | Model_training | Classification report for RandomForestClassifier:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     31910
+           1       1.00      0.98      0.99      4258
+
+    accuracy                           1.00     36168
+   macro avg       1.00      0.99      0.99     36168
+weighted avg       1.00      1.00      1.00     36168
+
+2025-11-05 23:51:09,961 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/RandomForestClassifier.pkl
+2025-11-05 23:51:09,961 | INFO | Model_training | Training model: KNeighborsClassifier
+2025-11-05 23:51:21,478 | INFO | Model_training | Classification report for KNeighborsClassifier:
+              precision    recall  f1-score   support
+
+           0       0.92      0.99      0.95     31910
+           1       0.79      0.32      0.45      4258
+
+    accuracy                           0.91     36168
+   macro avg       0.85      0.65      0.70     36168
+weighted avg       0.90      0.91      0.89     36168
+
+2025-11-05 23:51:21,503 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/KNeighborsClassifier.pkl
+2025-11-05 23:51:21,507 | INFO | Model_training | Training model: XGBClassifier
+2025-11-05 23:51:24,803 | INFO | Model_training | Classification report for XGBClassifier:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     31910
+           1       0.99      0.92      0.95      4258
+
+    accuracy                           0.99     36168
+   macro avg       0.99      0.96      0.97     36168
+weighted avg       0.99      0.99      0.99     36168
+
+2025-11-05 23:51:24,813 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl
+2025-11-05 23:51:24,813 | INFO | Model_training | Training completed for 4 models
