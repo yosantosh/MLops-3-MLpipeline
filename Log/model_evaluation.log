@@ -1,0 +1,7 @@
+2025-11-05 18:29:15,529   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-05 18:29:15,768   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : LogisticRegression.pkl
+2025-11-05 18:29:16,004   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : XGBClassifier.pkl
+2025-11-05 18:29:21,515   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : SVC.pkl
+2025-11-05 18:29:22,079   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : RandomForestClassifier.pkl
+2025-11-05 18:29:24,091   |  Model evaluation  |  DEBUG  |  Model performance metrices has been exrcated for : KNeighborsClassifier.pkl
+2025-11-05 18:29:24,095   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data

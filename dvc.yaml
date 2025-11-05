@@ -1,10 +1,10 @@
-stages:
-  data_ingetion:
-    cmd: python3 src/data_ingetion.py
-    deps:
+stages:                      # stages , to add pipeline stages
+  data_ingetion:    # componenets
+    cmd: python3 src/data_ingetion.py       #terminal command
+    deps:                  # dependencies
     - src/data_ingetion.py
 
-    out:
+    out:                 #output dir or file
       Data/row
 
   data_preprocessing:
@@ -32,4 +32,4 @@ stages:
       - src/model_evaluation.py
 
     out:
-      Data/src/model_performance_metrices.csv
+      Data/src/model_performance_metrices.csvs
