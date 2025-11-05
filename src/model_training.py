@@ -38,7 +38,7 @@ if not logger.handlers:
 models = [
     LogisticRegression(max_iter=1000),
     # SVC(kernel='rbf', probability=True),
-    RandomForestClassifier(n_estimators=130, min_samples_split=5),
+    RandomForestClassifier(n_estimators=150, min_samples_split=5),
     KNeighborsClassifier(n_neighbors=6),
     XGBClassifier(n_estimators=130, use_label_encoder=False, eval_metric='logloss')
 ]
