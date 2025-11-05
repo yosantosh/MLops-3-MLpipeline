@@ -46,7 +46,7 @@ def model_evaluation(dir:os.listdir, test_path,save_path:str) -> pd.DataFrame:
             y_pred = model.predict(X_test)
 
             D[i.split('.')[0]]={'accuracy':accuracy_score(y_true,y_pred),'precision':precision_score(y_true,y_pred),'recall':recall_score(y_true,y_pred),'F1':f1_score(y_true,y_pred)}
-            logger.debug('Model performance metrices has been exrcated for : %s',i)
+            logger.debug('Model performance metrices has been extracted for : %s',i)
 
 
         save_df = pd.DataFrame(D)
