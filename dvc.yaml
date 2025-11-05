@@ -1,0 +1,35 @@
+stages:
+  data_ingetion:
+    cmd: python3 src/data_ingetion.py
+    deps:
+    - src/data_ingetion.py
+
+    out:
+      Data/row
+
+  data_preprocessing:
+    cmd: python3 src/data_preprocessing.py
+    deps:
+      - Data/row
+      - src/data_preprocessing.py
+
+    out:
+      Data/preprocessed
+
+  model_training:
+    cmd: python3 src/model_training.py
+    deps:
+      - Data/preprocessed
+      - src/model_training.py
+    
+    out:
+      Data/models
+
+  model_evaluation:
+    cmd : python3 src/model_evaluation.py
+    deps:
+      - Data/models
+      - src/model_evaluation.py
+
+    out:
+      Data/src/model_performance_metrices.csv
