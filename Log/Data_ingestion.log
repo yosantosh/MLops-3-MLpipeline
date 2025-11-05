@@ -1,3 +1,6 @@
 2025-11-05 18:45:08,981 - DEBUG - Data_ingetion - Data Loaded from: https://raw.githubusercontent.com/yosantosh/MLOps/refs/heads/master/Class_3_ML_Pipeline/bank-full.csv
 2025-11-05 18:45:09,319 - DEBUG - Data_ingetion - Data has been saved to ./Data/raw
 2025-11-05 18:45:09,319 - DEBUG - Data_ingetion - Data Ingestion has been completed successfully
+2025-11-05 19:01:39,372 - DEBUG - Data_ingetion - Data Loaded from: https://raw.githubusercontent.com/yosantosh/MLOps/refs/heads/master/Class_3_ML_Pipeline/bank-full.csv
+2025-11-05 19:01:39,874 - DEBUG - Data_ingetion - Data has been saved to ./Data/raw
+2025-11-05 19:01:39,875 - DEBUG - Data_ingetion - Data Ingestion has been completed successfully

@@ -72,7 +72,7 @@ def save_data(train:pd.DataFrame, test:pd.DataFrame,path):
         raise
 
 
-def main(url,save_path,test_size=0.1):
+def main(url,save_path,test_size=0.2):
     try:
         df = data_loading(url)
         train,test = train_test_split(df,test_size=test_size,shuffle=True,random_state=4)
