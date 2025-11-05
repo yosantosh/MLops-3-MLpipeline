@@ -20,6 +20,7 @@ stages:                      # stages , to add pipeline stages
     cmd: python3 src/model_training.py
     deps:
       - Data/preprocessed
+      - src/data_preprocessing.py
       - src/model_training.py
     
     outs:

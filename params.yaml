@@ -1,0 +1,31 @@
+data_ingetion:
+  test_size: 0.2
+
+model_training:                                  # this is how to configure model with their parms
+  models:
+    LogisticRegression:
+      enabled: true
+      max_iter: 1000
+
+    SVC:
+      enabled: false
+      kernel: rbf
+      probability: true
+
+    RandomForestClassifier:
+      enabled: true
+      n_estimators: 150
+      min_samples_split: 5
+
+    KNeighborsClassifier:
+      enabled: true
+      n_neighbors: 6
+
+    XGBClassifier:
+      enabled: true
+      n_estimators: 130
+      use_label_encoder: false
+      eval_metric: logloss
+
+
+

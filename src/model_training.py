@@ -12,7 +12,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, mean_squared_error, r2_score
 import joblib
 
-# Setup logging
+import yaml
+
+# Setup logging --------------------------------------------------------------------
 log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Log'))
 os.makedirs(log_dir, exist_ok=True)
 
@@ -33,15 +35,90 @@ file_handler.setFormatter(fmt)
 if not logger.handlers:
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
-
+#-------------------------------------------------------------------------------------------
 # Default models to try (classification-focused)
-models = [
-    LogisticRegression(max_iter=1000),
-    # SVC(kernel='rbf', probability=True),
-    RandomForestClassifier(n_estimators=150, min_samples_split=5),
-    KNeighborsClassifier(n_neighbors=6),
-    XGBClassifier(n_estimators=130, use_label_encoder=False, eval_metric='logloss')
-]
+# models = [
+#     LogisticRegression(max_iter=1000),
+#     # SVC(kernel='rbf', probability=True),
+#     RandomForestClassifier(n_estimators=150, min_samples_split=5),
+#     KNeighborsClassifier(n_neighbors=6),
+#     XGBClassifier(n_estimators=130, use_label_encoder=False, eval_metric='logloss')
+# ]
+
+
+
+def load_params(params_path:str) -> dict:
+    try:
+        with open(params_path,'r') as file:
+            params = yaml.safe_load(file)
+        logger.debug("Params retrieved from %s ", params_path)
+        return params
+    except FileNotFoundError:
+        logger.error("File not found %s", params_path)
+        raise
+    except yaml.YAMLError as e:
+        logger.error("yaml error %s",e)
+        raise
+    except Exception as e:
+        logger.exception('Unexpected error loading params: %s', e)
+        raise
+
+
+
+def build_models_from_params(params: dict) -> List:
+    """Construct model instances from a params dict (loaded from params.yaml).
+
+    Expects params to have structure:
+      model_training:
+        models:
+          LogisticRegression:
+            enabled: true
+            max_iter: 1000
+          RandomForestClassifier:
+            enabled: true
+            n_estimators: 150
+
+    Returns a list of instantiated model objects.
+    """
+    model_map = {
+        'LogisticRegression': LogisticRegression,
+        'SVC': SVC,
+        'RandomForestClassifier': RandomForestClassifier,
+        'KNeighborsClassifier': KNeighborsClassifier,
+        'XGBClassifier': XGBClassifier,
+    }
+
+    models_list: List = []
+    try:
+        model_cfgs = params.get('model_training', {}).get('models', {}) or {}
+        for name, cfg in model_cfgs.items():
+            enabled = cfg.get('enabled', False)
+            if not enabled:
+                logger.debug('Model %s is disabled in params, skipping.', name)
+                continue
+
+            cls = model_map.get(name)
+            if cls is None:
+                logger.warning('Unknown model name in params: %s. Skipping.', name)
+                continue
+
+            # Remove control keys and pass the rest as kwargs
+            kw = {k: v for k, v in cfg.items() if k != 'enabled'}
+
+            try:
+                model = cls(**kw) if kw else cls()
+                models_list.append(model)
+                logger.info('Added model %s with params: %s', name, kw)
+            except TypeError as e:
+                logger.exception('Failed to instantiate %s with params %s: %s', name, kw, e)
+    except Exception as e:
+        logger.exception('Error while building models from params: %s', e)
+
+    return models_list
+
+
+
+
 
 
 def load_preprocessed_train(preprocessed_dir: str = None) -> pd.DataFrame:
@@ -136,7 +213,17 @@ def main():
     try:
         df = load_preprocessed_train()
         X, y = split_features_target(df)
-        res = train_and_save(models, X, y)
+        # Load params and build models dynamically
+        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+        params_path = os.path.join(project_root, 'params.yaml')
+        params = load_params(params_path)
+
+        models_list = build_models_from_params(params)
+        if not models_list:
+            logger.warning('No models configured to run. Check params.yaml under model_training.models')
+            return
+
+        res = train_and_save(models_list, X, y)
         logger.info('Training completed for %d models', len(res))
     except Exception as e:
         logger.exception('Model training pipeline failed: %s', e)

@@ -6,6 +6,7 @@ from sklearn.decomposition import PCA
 import os
 import logging
 
+import yaml
 
 #------------------------------------------------------------------------------------------------
                                      # setup logger #
@@ -43,6 +44,22 @@ logger.addHandler(file_handler)
 
 
   #------------------------------------------------------------------------------------------
+
+def load_params(params_path:str) -> dict:
+    try:
+        with open(params_path,'r') as file:
+            params = yaml.safe_load(file)
+        logger.debug("Params retrieved from %s ", params_path)
+        return params
+    except FileNotFoundError:
+        logger.error("File not found %s", params_path)
+        raise
+    except yaml.YAMLError as e:
+        logger.error("yaml error %s",e)
+        raise
+    except Exception as e:
+        logger.error('Got wtf error , fuck this %s', e)
+        raise
 
 
 def data_loading(url):
@@ -84,7 +101,11 @@ def main(url,save_path,test_size=0.2):
 
     
 if __name__=='__main__':
+
+    params = load_params(params_path='/home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/params.yaml')
     main(
         "https://raw.githubusercontent.com/yosantosh/MLOps/refs/heads/master/Class_3_ML_Pipeline/bank-full.csv",
         './Data/raw',
+        test_size=params['data_ingetion']['test_size']
+
     )
