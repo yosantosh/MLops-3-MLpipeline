@@ -35,3 +35,63 @@
 2025-11-06 01:20:19,726   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
 2025-11-06 01:20:23,477   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
 2025-11-06 01:20:23,481   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-06 17:28:37,909   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-06 17:28:38,088   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:28:39,871   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-06 17:28:40,275   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:28:41,098   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-06 17:28:42,362   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:28:43,098   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-06 17:28:46,967   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:28:47,519   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-06 17:28:47,523   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-06 17:31:01,615   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-06 17:31:01,719   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:31:02,411   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-06 17:31:02,543   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:31:02,689   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-06 17:31:03,653   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:31:03,796   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-06 17:31:06,743   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:31:06,907   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-06 17:31:06,911   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-06 17:33:07,324   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-06 17:33:07,426   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:33:08,660   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-06 17:33:08,926   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:33:09,740   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-06 17:33:10,804   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:33:11,446   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-06 17:33:15,088   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:33:15,684   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-06 17:33:15,688   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-06 17:34:09,538   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-06 17:34:09,657   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:34:10,899   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-06 17:34:11,036   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:34:11,661   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-06 17:34:12,479   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:34:13,076   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-06 17:34:16,047   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:34:16,610   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-06 17:34:16,614   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-06 17:37:53,798   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-06 17:37:53,897   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:37:55,068   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-06 17:37:55,214   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:37:55,852   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-06 17:37:56,743   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:37:57,381   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-06 17:38:00,701   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:38:01,232   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-06 17:38:01,236   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data
+2025-11-06 17:47:42,911   |  Model evaluation  |  DEBUG  |  Loaded test file
+2025-11-06 17:47:43,026   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:47:44,231   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : LogisticRegression.pkl
+2025-11-06 17:47:44,368   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:47:45,159   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : XGBClassifier.pkl
+2025-11-06 17:47:46,116   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:47:46,758   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : RandomForestClassifier.pkl
+2025-11-06 17:47:50,097   |  Model evaluation  |  DEBUG  |  Params retrieved from params.yaml 
+2025-11-06 17:47:50,649   |  Model evaluation  |  DEBUG  |  Model performance metrices has been extracted for : KNeighborsClassifier.pkl
+2025-11-06 17:47:50,652   |  Model evaluation  |  DEBUG  |  Please find the Model performance data frame at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data

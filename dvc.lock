@@ -63,10 +63,23 @@ stages:
       nfiles: 4
     - path: src/model_evaluation.py
       hash: md5
-      md5: 32eceb4344b15a47011955f1b47b5ade
-      size: 2294
+      md5: a539866b151bf43355760ddb89a769db
+      size: 3356
     outs:
-    - path: Data/model_performance_metrices.csv
+    - path: Data/model_performance_metrics.csv
       hash: md5
       md5: fc2245242c7df1b5c9c3c8c3c61361df
       size: 419
+  data_ingestion:
+    cmd: python3 src/data_ingetion.py
+    deps:
+    - path: src/data_ingetion.py
+      hash: md5
+      md5: 8e7c08c11789b060ce8c0aea6ab37866
+      size: 3645
+    outs:
+    - path: Data/raw
+      hash: md5
+      md5: b2d72f8914496999d9f7fbeafe647d42.dir
+      size: 3706211
+      nfiles: 2

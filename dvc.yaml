@@ -2,35 +2,42 @@ stages:                      # DVC pipeline stages
   data_ingestion:    # components
     cmd: python3 src/data_ingetion.py       # terminal command
     deps:                  # dependencies
-      - src/data_ingetion.py
+    - src/data_ingetion.py
 
     outs:                 # output dir or file
-      - Data/raw
+    - Data/raw
 
   data_preprocessing:
     cmd: python3 src/data_preprocessing.py
     deps:
-      - Data/raw
-      - src/data_preprocessing.py
+    - Data/raw
+    - src/data_preprocessing.py
 
     outs:
-      - Data/preprocessed
+    - Data/preprocessed
 
   model_training:
     cmd: python3 src/model_training.py
     deps:
-      - Data/preprocessed
-      - src/data_preprocessing.py
-      - src/model_training.py
-    
+    - Data/preprocessed
+    - src/data_preprocessing.py
+    - src/model_training.py
+
     outs:
-      - Data/models
+    - Data/models
 
   model_evaluation:
     cmd: python3 src/model_evaluation.py
     deps:
-      - Data/models
-      - src/model_evaluation.py
+    - Data/models
+    - src/model_evaluation.py
 
     outs:
-      - Data/model_performance_metrics.csv
+    - Data/model_performance_metrics.csv
+params:
+- dvclive/params.yaml
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
