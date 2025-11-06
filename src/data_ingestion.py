@@ -17,7 +17,7 @@ log_dir =  "/home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Log"
 os.makedirs(log_dir, exist_ok=True)      #it will create dir called log if ist not already exists 
 
 
-logger = logging.getLogger('Data_ingetion') # creating logger object and Data_Ingetion is name of this logger object that we will gonna use it later
+logger = logging.getLogger('Data_ingestion') # creating logger object
 logger.setLevel('DEBUG')   # all log levels will be convered in debug level of logger
 
 
@@ -58,7 +58,7 @@ def load_params(params_path:str) -> dict:
         logger.error("yaml error %s",e)
         raise
     except Exception as e:
-        logger.error('Got wtf error , fuck this %s', e)
+        logger.error('Got unexpected error %s', e)
         raise
 
 

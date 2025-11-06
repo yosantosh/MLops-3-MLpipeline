@@ -1,5 +1,5 @@
-data_ingetion:
-  test_size: 0.2
+data_ingestion:
+  test_size: 0.17
 
 model_training:                                  # this is how to configure model with their parms
   models:
@@ -14,16 +14,16 @@ model_training:                                  # this is how to configure mode
 
     RandomForestClassifier:
       enabled: true
-      n_estimators: 60
-      min_samples_split: 5
+      n_estimators: 270
+      min_samples_split: 8
 
     KNeighborsClassifier:
       enabled: true
-      n_neighbors: 6
+      n_neighbors: 4
 
     XGBClassifier:
       enabled: true
-      n_estimators: 60
+      n_estimators: 280
       use_label_encoder: false
       eval_metric: logloss
 

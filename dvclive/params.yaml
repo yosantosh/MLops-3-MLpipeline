@@ -1,4 +1,4 @@
-data_ingetion:
+data_ingestion:
   test_size: 0.2
 model_training:
   models:
