@@ -4,20 +4,27 @@ model_training:
   models:
     LogisticRegression:
       enabled: true
-      max_iter: 700
+      max_iter: 500
     SVC:
       enabled: false
       kernel: rbf
       probability: true
     RandomForestClassifier:
       enabled: true
-      n_estimators: 270
+      n_estimators: 40
       min_samples_split: 8
     KNeighborsClassifier:
       enabled: true
-      n_neighbors: 4
+      n_neighbors: 8
     XGBClassifier:
       enabled: true
-      n_estimators: 280
-      use_label_encoder: false
+      n_estimators: 300
+      use_label_encoder: true
       eval_metric: logloss
+      min_child_weight: 8
+      subsample: 0.7
+      colsample_bytree: 0.7
+      learning_rate: 0.01
+      grow_policy: lossguide
+      reg_lambda: 0.8
+      reg_alpha: 0.2
