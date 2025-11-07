@@ -6,6 +6,3 @@
 2025-11-05 19:01:44,887 - DEBUG - Data preprocessing - The data has been preprocessed successfully
 2025-11-05 19:01:45,125 - DEBUG - Data preprocessing - The data has been preprocessed successfully
 2025-11-05 19:01:51,337 - DEBUG - Data preprocessing - Data has been preprocessed and saved at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/preprocessed/
-2025-11-07 15:59:09,613 - DEBUG - Data preprocessing - The data has been preprocessed successfully
-2025-11-07 15:59:10,204 - DEBUG - Data preprocessing - The data has been preprocessed successfully
-2025-11-07 15:59:24,059 - DEBUG - Data preprocessing - Data has been preprocessed and saved at: /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/preprocessed/

@@ -4,9 +4,6 @@ stages:                      # DVC pipeline stages
     deps:                  # dependencies
     - src/data_ingetion.py
 
-    params:
-    - data_ingestion.test_size
-
     outs:                 # output dir or file
     - Data/raw
 
@@ -26,9 +23,6 @@ stages:                      # DVC pipeline stages
     - src/data_preprocessing.py
     - src/model_training.py
 
-    params:
-    - model_training.models
-
     outs:
     - Data/models
 
@@ -38,13 +32,9 @@ stages:                      # DVC pipeline stages
     - Data/models
     - src/model_evaluation.py
 
-    params:
-    - model_training.models
-
     outs:
     - Data/model_performance_metrics.csv
 params:
-- params.yaml
 - dvclive/params.yaml
 metrics:
 - dvclive/metrics.json

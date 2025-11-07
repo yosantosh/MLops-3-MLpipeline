@@ -1,2 +1,7 @@
 [core]
     autostage = true
+    remote = s3_dvc1
+['remote "s3_dvc"']
+    url = s3://dvc-pipeline-bucket
+['remote "s3_dvc1"']
+    url = s3://dvc1-pipeline-bucket
