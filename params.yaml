@@ -23,9 +23,16 @@ model_training:                                  # this is how to configure mode
 
     XGBClassifier:
       enabled: true
-      n_estimators: 40
-      use_label_encoder: false
+      n_estimators: 300
+      use_label_encoder: True
       eval_metric: logloss
+      min_child_weight: 8
+      subsample: 0.7
+      colsample_bytree: 0.7
+      learning_rate: 0.01
+      grow_policy: lossguide
+      reg_lambda: 0.8   #  L2 regularization
+      reg_alpha: 0.2     # L1 regulization.
 
 
 

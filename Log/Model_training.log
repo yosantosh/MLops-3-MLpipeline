@@ -415,3 +415,217 @@ weighted avg       1.00      1.00      1.00     39785
 
 2025-11-07 16:05:00,131 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl
 2025-11-07 16:05:00,133 | INFO | Model_training | Training completed for 4 models
+2025-11-07 16:50:50,878 | INFO | Model_training | Loaded preprocessed train data with shape (39785, 41)
+2025-11-07 16:50:50,928 | DEBUG | Model_training | Split features X shape: (39785, 40), target y shape: (39785,)
+2025-11-07 16:50:50,963 | DEBUG | Model_training | Params retrieved from /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/params.yaml 
+2025-11-07 16:50:50,970 | INFO | Model_training | Added model LogisticRegression with params: {'max_iter': 500}
+2025-11-07 16:50:50,973 | DEBUG | Model_training | Model SVC is disabled in params, skipping.
+2025-11-07 16:50:50,974 | INFO | Model_training | Added model RandomForestClassifier with params: {'n_estimators': 40, 'min_samples_split': 8}
+2025-11-07 16:50:50,980 | INFO | Model_training | Added model KNeighborsClassifier with params: {'n_neighbors': 8}
+2025-11-07 16:50:50,985 | INFO | Model_training | Added model XGBClassifier with params: {'n_estimators': 300, 'use_label_encoder': True, 'eval_metric': 'logloss', 'min_child_weight': 8, 'subsample': 0.7, 'colsample_bytree': 0.7, 'learning_rate': 0.01, 'early_stopping_rounds': 30, 'grow_policy': 'lossguide', 'lambda': 'l2'}
+2025-11-07 16:50:50,988 | INFO | Model_training | Detected problem type: classification
+2025-11-07 16:50:50,996 | INFO | Model_training | Training model: LogisticRegression
+2025-11-07 16:50:51,846 | INFO | Model_training | Classification report for LogisticRegression:
+              precision    recall  f1-score   support
+
+           0       0.92      0.98      0.95     35127
+           1       0.65      0.34      0.45      4658
+
+    accuracy                           0.90     39785
+   macro avg       0.78      0.66      0.70     39785
+weighted avg       0.89      0.90      0.89     39785
+
+2025-11-07 16:50:51,857 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/LogisticRegression.pkl
+2025-11-07 16:50:51,857 | INFO | Model_training | Training model: RandomForestClassifier
+2025-11-07 16:51:46,276 | INFO | Model_training | Classification report for RandomForestClassifier:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     35127
+           1       0.99      0.90      0.95      4658
+
+    accuracy                           0.99     39785
+   macro avg       0.99      0.95      0.97     39785
+weighted avg       0.99      0.99      0.99     39785
+
+2025-11-07 16:51:46,333 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/RandomForestClassifier.pkl
+2025-11-07 16:51:46,333 | INFO | Model_training | Training model: KNeighborsClassifier
+2025-11-07 16:52:01,690 | INFO | Model_training | Classification report for KNeighborsClassifier:
+              precision    recall  f1-score   support
+
+           0       0.91      0.99      0.95     35127
+           1       0.76      0.30      0.43      4658
+
+    accuracy                           0.91     39785
+   macro avg       0.83      0.64      0.69     39785
+weighted avg       0.90      0.91      0.89     39785
+
+2025-11-07 16:52:01,710 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/KNeighborsClassifier.pkl
+2025-11-07 16:52:01,710 | INFO | Model_training | Training model: XGBClassifier
+2025-11-07 16:52:02,410 | ERROR | Model_training | Failed training model XGBClassifier: Invalid Parameter format for reg_lambda expect float but value='l2'
+Traceback (most recent call last):
+  File "/home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/src/model_training.py", line 184, in train_and_save
+    model.fit(X, y)
+    ~~~~~~~~~^^^^^^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/core.py", line 774, in inner_f
+    return func(**kwargs)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/sklearn.py", line 1803, in fit
+    self._Booster = train(
+                    ~~~~~^
+        params,
+        ^^^^^^^
+    ...<9 lines>...
+        callbacks=self.callbacks,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/core.py", line 774, in inner_f
+    return func(**kwargs)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/training.py", line 194, in train
+    bst = cb_container.before_training(bst)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/callback.py", line 187, in before_training
+    model = c.before_training(model=model)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/callback.py", line 386, in before_training
+    self.starting_round = model.num_boosted_rounds()
+                          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/core.py", line 3098, in num_boosted_rounds
+    _check_call(_LIB.XGBoosterBoostedRounds(self.handle, ctypes.byref(rounds)))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/core.py", line 323, in _check_call
+    raise XGBoostError(py_str(_LIB.XGBGetLastError()))
+xgboost.core.XGBoostError: Invalid Parameter format for reg_lambda expect float but value='l2'
+2025-11-07 16:52:02,425 | INFO | Model_training | Training completed for 3 models
+2025-11-07 17:01:27,995 | INFO | Model_training | Loaded preprocessed train data with shape (39785, 41)
+2025-11-07 17:01:28,054 | DEBUG | Model_training | Split features X shape: (39785, 40), target y shape: (39785,)
+2025-11-07 17:01:28,109 | DEBUG | Model_training | Params retrieved from /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/params.yaml 
+2025-11-07 17:01:28,124 | INFO | Model_training | Added model LogisticRegression with params: {'max_iter': 500}
+2025-11-07 17:01:28,125 | DEBUG | Model_training | Model SVC is disabled in params, skipping.
+2025-11-07 17:01:28,125 | INFO | Model_training | Added model RandomForestClassifier with params: {'n_estimators': 40, 'min_samples_split': 8}
+2025-11-07 17:01:28,127 | INFO | Model_training | Added model KNeighborsClassifier with params: {'n_neighbors': 8}
+2025-11-07 17:01:28,136 | INFO | Model_training | Added model XGBClassifier with params: {'n_estimators': 300, 'use_label_encoder': True, 'eval_metric': 'logloss', 'min_child_weight': 8, 'subsample': 0.7, 'colsample_bytree': 0.7, 'learning_rate': 0.01, 'early_stopping_rounds': 30, 'grow_policy': 'lossguide', 'reg_lambda': 0.8, 'reg_alpha': 0.2}
+2025-11-07 17:01:28,149 | INFO | Model_training | Detected problem type: classification
+2025-11-07 17:01:28,151 | INFO | Model_training | Training model: LogisticRegression
+2025-11-07 17:01:29,443 | INFO | Model_training | Classification report for LogisticRegression:
+              precision    recall  f1-score   support
+
+           0       0.92      0.98      0.95     35127
+           1       0.65      0.34      0.45      4658
+
+    accuracy                           0.90     39785
+   macro avg       0.78      0.66      0.70     39785
+weighted avg       0.89      0.90      0.89     39785
+
+2025-11-07 17:01:29,464 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/LogisticRegression.pkl
+2025-11-07 17:01:29,464 | INFO | Model_training | Training model: RandomForestClassifier
+2025-11-07 17:02:48,204 | INFO | Model_training | Classification report for RandomForestClassifier:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     35127
+           1       1.00      0.90      0.94      4658
+
+    accuracy                           0.99     39785
+   macro avg       0.99      0.95      0.97     39785
+weighted avg       0.99      0.99      0.99     39785
+
+2025-11-07 17:02:48,295 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/RandomForestClassifier.pkl
+2025-11-07 17:02:48,296 | INFO | Model_training | Training model: KNeighborsClassifier
+2025-11-07 17:03:09,873 | INFO | Model_training | Classification report for KNeighborsClassifier:
+              precision    recall  f1-score   support
+
+           0       0.91      0.99      0.95     35127
+           1       0.76      0.30      0.43      4658
+
+    accuracy                           0.91     39785
+   macro avg       0.83      0.64      0.69     39785
+weighted avg       0.90      0.91      0.89     39785
+
+2025-11-07 17:03:09,912 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/KNeighborsClassifier.pkl
+2025-11-07 17:03:09,912 | INFO | Model_training | Training model: XGBClassifier
+2025-11-07 17:03:11,163 | ERROR | Model_training | Failed training model XGBClassifier: Must have at least 1 validation dataset for early stopping.
+Traceback (most recent call last):
+  File "/home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/src/model_training.py", line 184, in train_and_save
+    model.fit(X, y)
+    ~~~~~~~~~^^^^^^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/core.py", line 774, in inner_f
+    return func(**kwargs)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/sklearn.py", line 1803, in fit
+    self._Booster = train(
+                    ~~~~~^
+        params,
+        ^^^^^^^
+    ...<9 lines>...
+        callbacks=self.callbacks,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/core.py", line 774, in inner_f
+    return func(**kwargs)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/training.py", line 200, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/callback.py", line 269, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/callback.py", line 269, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/santosh/Desktop/MLOps/.venv/lib/python3.13/site-packages/xgboost/callback.py", line 461, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+2025-11-07 17:03:11,194 | INFO | Model_training | Training completed for 3 models
+2025-11-07 17:07:34,576 | INFO | Model_training | Loaded preprocessed train data with shape (39785, 41)
+2025-11-07 17:07:34,615 | DEBUG | Model_training | Split features X shape: (39785, 40), target y shape: (39785,)
+2025-11-07 17:07:34,636 | DEBUG | Model_training | Params retrieved from /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/params.yaml 
+2025-11-07 17:07:34,638 | INFO | Model_training | Added model LogisticRegression with params: {'max_iter': 500}
+2025-11-07 17:07:34,638 | DEBUG | Model_training | Model SVC is disabled in params, skipping.
+2025-11-07 17:07:34,638 | INFO | Model_training | Added model RandomForestClassifier with params: {'n_estimators': 40, 'min_samples_split': 8}
+2025-11-07 17:07:34,638 | INFO | Model_training | Added model KNeighborsClassifier with params: {'n_neighbors': 8}
+2025-11-07 17:07:34,641 | INFO | Model_training | Added model XGBClassifier with params: {'n_estimators': 300, 'use_label_encoder': True, 'eval_metric': 'logloss', 'min_child_weight': 8, 'subsample': 0.7, 'colsample_bytree': 0.7, 'learning_rate': 0.01, 'grow_policy': 'lossguide', 'reg_lambda': 0.8, 'reg_alpha': 0.2}
+2025-11-07 17:07:34,642 | INFO | Model_training | Detected problem type: classification
+2025-11-07 17:07:34,642 | INFO | Model_training | Training model: LogisticRegression
+2025-11-07 17:07:35,409 | INFO | Model_training | Classification report for LogisticRegression:
+              precision    recall  f1-score   support
+
+           0       0.92      0.98      0.95     35127
+           1       0.65      0.34      0.45      4658
+
+    accuracy                           0.90     39785
+   macro avg       0.78      0.66      0.70     39785
+weighted avg       0.89      0.90      0.89     39785
+
+2025-11-07 17:07:35,418 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/LogisticRegression.pkl
+2025-11-07 17:07:35,419 | INFO | Model_training | Training model: RandomForestClassifier
+2025-11-07 17:09:46,968 | INFO | Model_training | Classification report for RandomForestClassifier:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     35127
+           1       1.00      0.90      0.94      4658
+
+    accuracy                           0.99     39785
+   macro avg       0.99      0.95      0.97     39785
+weighted avg       0.99      0.99      0.99     39785
+
+2025-11-07 17:09:47,085 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/RandomForestClassifier.pkl
+2025-11-07 17:09:47,087 | INFO | Model_training | Training model: KNeighborsClassifier
+2025-11-07 17:10:12,938 | INFO | Model_training | Classification report for KNeighborsClassifier:
+              precision    recall  f1-score   support
+
+           0       0.91      0.99      0.95     35127
+           1       0.76      0.30      0.43      4658
+
+    accuracy                           0.91     39785
+   macro avg       0.83      0.64      0.69     39785
+weighted avg       0.90      0.91      0.89     39785
+
+2025-11-07 17:10:12,989 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/KNeighborsClassifier.pkl
+2025-11-07 17:10:12,989 | INFO | Model_training | Training model: XGBClassifier
+2025-11-07 17:12:07,251 | INFO | Model_training | Classification report for XGBClassifier:
+              precision    recall  f1-score   support
+
+           0       0.93      0.98      0.95     35127
+           1       0.75      0.41      0.53      4658
+
+    accuracy                           0.91     39785
+   macro avg       0.84      0.69      0.74     39785
+weighted avg       0.91      0.91      0.90     39785
+
+2025-11-07 17:12:07,272 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl
+2025-11-07 17:12:07,273 | INFO | Model_training | Training completed for 4 models
