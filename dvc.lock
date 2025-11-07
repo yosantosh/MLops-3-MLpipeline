@@ -18,7 +18,7 @@ stages:
     deps:
     - path: Data/raw
       hash: md5
-      md5: b2d72f8914496999d9f7fbeafe647d42.dir
+      md5: 39b6a465239c70726067788b2f529810.dir
       size: 3706211
       nfiles: 2
     - path: src/data_preprocessing.py
@@ -28,16 +28,16 @@ stages:
     outs:
     - path: Data/preprocessed
       hash: md5
-      md5: d76c6c55f207761a8cef06606a59404d.dir
-      size: 35764339
+      md5: 56d58de9deaeacc0a542eb65c6bcf53d.dir
+      size: 35773813
       nfiles: 2
   model_training:
     cmd: python3 src/model_training.py
     deps:
     - path: Data/preprocessed
       hash: md5
-      md5: d76c6c55f207761a8cef06606a59404d.dir
-      size: 35764339
+      md5: 56d58de9deaeacc0a542eb65c6bcf53d.dir
+      size: 35773813
       nfiles: 2
     - path: src/data_preprocessing.py
       hash: md5
@@ -47,39 +47,86 @@ stages:
       hash: md5
       md5: 329712dc40c379cdab7fa9afbb2e7864
       size: 7941
+    params:
+      params.yaml:
+        model_training.models:
+          LogisticRegression:
+            enabled: true
+            max_iter: 700
+          SVC:
+            enabled: false
+            kernel: rbf
+            probability: true
+          RandomForestClassifier:
+            enabled: true
+            n_estimators: 270
+            min_samples_split: 8
+          KNeighborsClassifier:
+            enabled: true
+            n_neighbors: 4
+          XGBClassifier:
+            enabled: true
+            n_estimators: 280
+            use_label_encoder: false
+            eval_metric: logloss
     outs:
     - path: Data/models
       hash: md5
-      md5: b6e8ebfe9b30d893810c669c64392e0b.dir
-      size: 53110145
+      md5: e8423166d469464d98e16fb7007ea3ca.dir
+      size: 83577917
       nfiles: 4
   model_evaluation:
     cmd: python3 src/model_evaluation.py
     deps:
     - path: Data/models
       hash: md5
-      md5: b6e8ebfe9b30d893810c669c64392e0b.dir
-      size: 53110145
+      md5: e8423166d469464d98e16fb7007ea3ca.dir
+      size: 83577917
       nfiles: 4
     - path: src/model_evaluation.py
       hash: md5
       md5: a539866b151bf43355760ddb89a769db
       size: 3356
+    params:
+      params.yaml:
+        model_training.models:
+          LogisticRegression:
+            enabled: true
+            max_iter: 700
+          SVC:
+            enabled: false
+            kernel: rbf
+            probability: true
+          RandomForestClassifier:
+            enabled: true
+            n_estimators: 270
+            min_samples_split: 8
+          KNeighborsClassifier:
+            enabled: true
+            n_neighbors: 4
+          XGBClassifier:
+            enabled: true
+            n_estimators: 280
+            use_label_encoder: false
+            eval_metric: logloss
     outs:
     - path: Data/model_performance_metrics.csv
       hash: md5
-      md5: fc2245242c7df1b5c9c3c8c3c61361df
-      size: 419
+      md5: 58da80857a643161942bb62612f9a3ed
+      size: 404
   data_ingestion:
     cmd: python3 src/data_ingetion.py
     deps:
     - path: src/data_ingetion.py
       hash: md5
-      md5: 8e7c08c11789b060ce8c0aea6ab37866
-      size: 3645
+      md5: 5758e2506fe599c59129abe865d4a433
+      size: 3646
+    params:
+      params.yaml:
+        data_ingestion.test_size: 0.12
     outs:
     - path: Data/raw
       hash: md5
-      md5: b2d72f8914496999d9f7fbeafe647d42.dir
+      md5: 39b6a465239c70726067788b2f529810.dir
       size: 3706211
       nfiles: 2

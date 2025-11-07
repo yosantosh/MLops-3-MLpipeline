@@ -357,3 +357,61 @@ weighted avg       0.99      0.99      0.99     36168
 
 2025-11-06 01:20:13,709 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl
 2025-11-06 01:20:13,709 | INFO | Model_training | Training completed for 4 models
+2025-11-07 15:59:35,440 | INFO | Model_training | Loaded preprocessed train data with shape (39785, 41)
+2025-11-07 15:59:35,474 | DEBUG | Model_training | Split features X shape: (39785, 40), target y shape: (39785,)
+2025-11-07 15:59:35,504 | DEBUG | Model_training | Params retrieved from /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/params.yaml 
+2025-11-07 15:59:35,508 | INFO | Model_training | Added model LogisticRegression with params: {'max_iter': 700}
+2025-11-07 15:59:35,510 | DEBUG | Model_training | Model SVC is disabled in params, skipping.
+2025-11-07 15:59:35,510 | INFO | Model_training | Added model RandomForestClassifier with params: {'n_estimators': 270, 'min_samples_split': 8}
+2025-11-07 15:59:35,512 | INFO | Model_training | Added model KNeighborsClassifier with params: {'n_neighbors': 4}
+2025-11-07 15:59:35,512 | INFO | Model_training | Added model XGBClassifier with params: {'n_estimators': 280, 'use_label_encoder': False, 'eval_metric': 'logloss'}
+2025-11-07 15:59:35,517 | INFO | Model_training | Detected problem type: classification
+2025-11-07 15:59:35,523 | INFO | Model_training | Training model: LogisticRegression
+2025-11-07 15:59:36,670 | INFO | Model_training | Classification report for LogisticRegression:
+              precision    recall  f1-score   support
+
+           0       0.92      0.98      0.95     35127
+           1       0.65      0.34      0.45      4658
+
+    accuracy                           0.90     39785
+   macro avg       0.78      0.66      0.70     39785
+weighted avg       0.89      0.90      0.89     39785
+
+2025-11-07 15:59:36,693 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/LogisticRegression.pkl
+2025-11-07 15:59:36,696 | INFO | Model_training | Training model: RandomForestClassifier
+2025-11-07 16:04:30,326 | INFO | Model_training | Classification report for RandomForestClassifier:
+              precision    recall  f1-score   support
+
+           0       0.99      1.00      0.99     35127
+           1       1.00      0.91      0.95      4658
+
+    accuracy                           0.99     39785
+   macro avg       0.99      0.96      0.97     39785
+weighted avg       0.99      0.99      0.99     39785
+
+2025-11-07 16:04:31,027 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/RandomForestClassifier.pkl
+2025-11-07 16:04:31,028 | INFO | Model_training | Training model: KNeighborsClassifier
+2025-11-07 16:04:49,907 | INFO | Model_training | Classification report for KNeighborsClassifier:
+              precision    recall  f1-score   support
+
+           0       0.92      0.99      0.95     35127
+           1       0.84      0.34      0.48      4658
+
+    accuracy                           0.91     39785
+   macro avg       0.88      0.66      0.72     39785
+weighted avg       0.91      0.91      0.90     39785
+
+2025-11-07 16:04:49,926 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/KNeighborsClassifier.pkl
+2025-11-07 16:04:49,926 | INFO | Model_training | Training model: XGBClassifier
+2025-11-07 16:05:00,120 | INFO | Model_training | Classification report for XGBClassifier:
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     35127
+           1       1.00      1.00      1.00      4658
+
+    accuracy                           1.00     39785
+   macro avg       1.00      1.00      1.00     39785
+weighted avg       1.00      1.00      1.00     39785
+
+2025-11-07 16:05:00,131 | INFO | Model_training | Saved trained model to /home/santosh/Desktop/MLOps/Class_3_ML_Pipeline/Data/models/XGBClassifier.pkl
+2025-11-07 16:05:00,133 | INFO | Model_training | Training completed for 4 models
